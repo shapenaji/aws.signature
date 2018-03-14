@@ -294,7 +294,7 @@ get_ec2_role <- function(role, verbose = getOption("verbose", FALSE)) {
     }
     # return role credentials as list
     out <- try(aws.ec2metadata::metadata$iam_role(role[1L]), silent = TRUE)
-    if (inherits(out, "try-errror")) {
+    if (inherits(out, "try-error")) {
         out <- NULL
     }
     out
